@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulário em Jquerry</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/bootstrap-grid.min.css" rel="stylesheet" type="text/css"/>
+    <script src="arquivos/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script src="arquivos/jquery.mask.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="arquivos/bootstrap-notify.min.js" type="text/javascript"> </script>
+
+    <script type="text/javascript">
+    $ (document). ready (function(){
+$ ('#datanascimento').mask('00/00/0000');
+    })
+    function confirmação () {
+    $.notify({
+	message: 'Cadastro Salvo com Sucesso' 
+    },{
+     type: 'success'   
+    });
+	
+    return false 
+
+}
+function validacao () {
+    if (document.form.senha.value.length <6) {
+        alert ("A senha deve conter no mínimo 6 caracteres.");
+        document.form.senha.focus () ;
+        return false
+
+
+    }
+	
+    return false 
+
+
+
+</script>
+</head>
+       
+    
+<body>
+        
+	
+<form name="formCadastro" method="POST " action="pasta.com"   onsubmit="return confirmação()">
+    
+        <p> Por favor, preencha os campos abaixo e depois clique no botão confirmar. </p>
+
+
+		<div class="form-group">
+        <label>Nome :</label> 
+        <input type="text" name="nome" size="35" placeholder="Digite Aqui..." class="form-control"></div>
+    
+        
+        <div class="form-group">
+        <label>CPF:</label> 
+        <input type="text" name="cpf" id="cpf" size="35" placeholder="000.000.000-00" class="form-control"> <div class="form-group">   </div>
+
+    <div class="form-group">
+        <label> E-mail : </label>
+        <input type="email" name="email" size="35" placeholder="exemplo@dominio.com" class="form-control"> </div>
+
+        <div class="form-group">
+            <label>Data de nascimento: </label> 
+            <input type="date" name="datanasc" id="datanasc" size="35" placeholder="00/00/0000" class="form-control"></div>
+       
+            <div class="form-group">
+                <label> Senha : </label> 
+                <input type="password" name="Senha" size="35" placeholder="Digite sua senha" class="form-control"></div>
+        
+                <div class="form-group">
+                     <label> Confirme sua Senha : </label> 
+                      <input type="password" name="Confirme sua senha" size="35" placeholder="Confirme sua senha" class="form-control" > </div>
+       
+    
+                      <div class="form-group"> Sexo:<br>
+			<input type="radio" name="sexo" value="f"> Feminino <br>
+            <input type="radio" name="sexo" value="m"> Masculino  <br><br> <p>
+            </div>
+        
+    
+		
+		
+		
+        </form>
+        
+        <script type="text/javascript">
+        $ ("#cpf"). mask ("000.000.000-00")
+        
+        
+        </script>
+	  <button class="btn-primary" >
+          <span class="glyphicon glyphicon-send" ></span>
+            Confimar
+        </button> 
+
+
+<button class=" btn-primary">
+     Cancelar
+</button></p>
+
+
+
+    </form>
+ 
+</body>
+</html>
